@@ -1,0 +1,2 @@
+# Flikr API
+GET https://www.flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&lat=39.76574&lon=-86.1579024
