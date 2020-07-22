@@ -2,7 +2,7 @@
 For this assessment, you will create a web application to display photos that were taken near the user's geographic location.
 
 ## GitLab Pages URL
-https://josephdubon.gitlab.io/PROJECT-NAME-HERE
+https://josephdubon.gitlab.io/photos-from-here
 
 ### Assessment Development Plan
     1. Get the geographic location from the browser
