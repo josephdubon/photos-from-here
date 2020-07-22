@@ -39,12 +39,13 @@ function constructImageURL(photoObj) {
 function showImages(dataObj) {
     let imageCollection = dataObj.photos.photo
     let imageSource = constructImageURL(imageCollection[0])
-    document.getElementById("imageOutput").src = imageSource
+    let currentImage = document.createElement("img")
+    currentImage.src = imageSource
+    document.getElementById("photoContainer").appendChild(currentImage)
 }
 
-function nextImage(dataObj) {
-console.log("ShowNextImage")
-
+function nextImage() {
+    console.log("Next Image.")
 }
 
 function processResponse(response) {
