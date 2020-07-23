@@ -36,7 +36,7 @@
 // }
 // End Test
 
-let pageNumber = 2
+let pageNumber = 1
 // third to run
 let options = {
     enableHighAccuracy: true,
@@ -85,6 +85,7 @@ function enableRealLocation(pos) {
     getImages(pos.coords)
     // Next image button
     const nextButton = document.getElementById("nextButton")
+    pageNumber = 2
     nextButton.addEventListener('click', function () {
         getImages(pos.coords, pageNumber)
         pageNumber++
