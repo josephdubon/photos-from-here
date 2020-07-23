@@ -103,6 +103,7 @@ function enableFallbackLocation(pos) {
     getImages(enableFallbackLocation)
     // Next image button
     const nextButton = document.getElementById("nextButton")
+    pageNumber = 2
     nextButton.addEventListener('click', function () {
         getImages(pos.coords, pageNumber)
         pageNumber++
