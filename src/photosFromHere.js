@@ -62,6 +62,7 @@ function enableRealLocation(pos) {
     // Next image button
     const nextButton = document.getElementById("nextButton")
     nextButton.addEventListener('click', function () {
+        console.log(pageNumber)
         getImages(pos.coords, pageNumber)
         pageNumber++
         if (pageNumber === 8) {
