@@ -49,8 +49,8 @@ function getImages(coords) {
     console.log("Lat: " + coords.latitude)
     console.log("Lon: " + coords.longitude)
     // Proxy borrowed from Randy Cox.
-    const url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=0&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=neonlights&page=" + pageNumber
-
+    url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=0&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=neonlights&page=" + pageNumber
+    console.log(pageNumber)
     let fetchPromise = fetch(url)
     fetchPromise.then(processResponse)
 }
@@ -61,11 +61,10 @@ function enableRealLocation(pos) {
     // Next image button
     const nextButton = document.getElementById("nextButton")
     nextButton.addEventListener('click', function () {
-        console.log(pageNumber)
         getImages(pos.coords, pageNumber)
         pageNumber++
-        if (pageNumber === 8) {
-            pageNumber = 0
+        if (pageNumber === 6) {
+            pageNumber = 1
         }
     })
 }
@@ -78,8 +77,8 @@ function enableFallbackLocation(pos) {
     nextButton.addEventListener('click', function () {
         getImages(pos.coords, pageNumber)
         pageNumber++
-        if (pageNumber === 8) {
-            pageNumber = 0
+        if (pageNumber = 7) {
+            pageNumber = 1
         }
     })
 }
