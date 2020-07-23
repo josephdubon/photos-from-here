@@ -77,7 +77,7 @@ function enableFallbackLocation(pos) {
     nextButton.addEventListener('click', function () {
         getImages(pos.coords, pageNumber)
         pageNumber++
-        if (pageNumber = 7) {
+        if (pageNumber === 6) {
             pageNumber = 1
         }
     })
