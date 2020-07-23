@@ -111,7 +111,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.5;
 }
 
 ol,
@@ -150,6 +150,9 @@ body {
 }
 
 #photoContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     flex-grow: 1;
     flex-basis: 0;
     height: 500px;
@@ -157,6 +160,21 @@ body {
 }
 
 img {
-    height: 500px;
+    height: 300px;
     margin: 25px;
+}
+
+button {
+    background-color: rgb(49, 49, 49);
+    color: white;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 0 50px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #686868;
+    color: white;
 }
