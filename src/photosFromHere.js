@@ -50,7 +50,7 @@ function getImages(coords) {
     console.log("Lat: " + coords.latitude)
     console.log("Lon: " + coords.longitude)
     // Proxy borrowed from Randy Cox.
-    const url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=1&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=neonlights&page=" + pageIndex
+    const url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=0&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=neonlights&page=" + pageIndex
 
     let fetchPromise = fetch(url)
     fetchPromise.then(processResponse)
@@ -75,6 +75,9 @@ function enableFallbackLocation(pos) {
     nextButton.addEventListener('click', function () {
         getImages(pos.coords, pageIndex)
         pageIndex++
+        if (pageIndex === 5) {
+            pageIndex = 0
+        }
     })
 }
 
