@@ -40,6 +40,7 @@
 // Thank you, Michelle!
 
 let pageNumber = 1
+
 // third to run
 let options = {
     enableHighAccuracy: true,
