@@ -11,9 +11,7 @@
 // }
 // End Test
 
-// Next image button
-const nextButton = document.getElementById("nextButton")
-nextButton.addEventListener('click', nextImage)
+let pageIndex = 0
 
 // third to run
 let options = {
@@ -39,13 +37,8 @@ function constructImageURL(photoObj) {
 function showImages(dataObj) {
     let imageCollection = dataObj.photos.photo
     let imageSource = constructImageURL(imageCollection[0])
-    let currentImage = document.createElement("img")
-    currentImage.src = imageSource
-    document.getElementById("photoContainer").appendChild(currentImage)
-}
+    document.getElementById("imageOutput").src = imageSource
 
-function nextImage() {
-    console.log("Next Image.")
 }
 
 function processResponse(response) {
@@ -57,7 +50,7 @@ function getImages(coords) {
     console.log("Lat: " + coords.latitude)
     console.log("Lon: " + coords.longitude)
     // Proxy borrowed from Randy Cox.
-    const url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=35mm"
+    const url = "https://shrouded-mountain-15003.herokuapp.com/https://flickr.com/services/rest/?api_key=2a96b784d0ba4e0c0a78883ca2895246&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=1&lat=" + coords.latitude + "&lon=" + coords.longitude + "&text=neonlights&page=" + pageIndex
 
     let fetchPromise = fetch(url)
     fetchPromise.then(processResponse)
@@ -66,11 +59,23 @@ function getImages(coords) {
 // Show real location
 function enableRealLocation(pos) {
     getImages(pos.coords)
+    // Next image button
+    const nextButton = document.getElementById("nextButton")
+    nextButton.addEventListener('click', function () {
+        getImages(pos.coords, pageIndex)
+        pageIndex++
+    })
 }
 
 // Second to run
-function enableFallbackLocation(err) {
+function enableFallbackLocation(pos) {
     getImages(enableFallbackLocation)
+    // Next image button
+    const nextButton = document.getElementById("nextButton")
+    nextButton.addEventListener('click', function () {
+        getImages(pos.coords, pageIndex)
+        pageIndex++
+    })
 }
 
 // Get the current location
