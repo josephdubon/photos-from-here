@@ -136,3 +136,27 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* Start Here */
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    padding: 15px;
+    margin: 5px;
+}
+
+#photoContainer {
+    flex-grow: 1;
+    flex-basis: 0;
+    height: 500px;
+    margin: 15px 0;
+}
+
+img {
+    height: 500px;
+    margin: 25px;
+}
