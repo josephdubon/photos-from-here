@@ -36,6 +36,9 @@
 // }
 // End Test
 
+// Received some help from Michelle Hoelzer (Associate Instructor, SE).
+// Thank you, Michelle!
+
 let pageNumber = 1
 // third to run
 let options = {
