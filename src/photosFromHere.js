@@ -11,8 +11,7 @@
 // }
 // End Test
 
-let pageNumber = 0
-
+let pageNumber = 1
 // third to run
 let options = {
     enableHighAccuracy: true,
