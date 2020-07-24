@@ -101,7 +101,7 @@ function enableRealLocation(pos) {
 
 // Second to run
 function enableFallbackLocation(pos) {
-    getImages(enableFallbackLocation)
+    getImages(fallbackLocation)
     // Next image button
     const nextButton = document.getElementById("nextButton")
     pageNumber = 2
